@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton;
+namespace Mahmoudmhamed\InertiaVueHelpers;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use VendorName\Skeleton\Commands\SkeletonCommand;
+use Mahmoudmhamed\InertiaVueHelpers\Commands\InertiaVueHelpersCommand;
 
-class SkeletonServiceProvider extends PackageServiceProvider
+class InertiaVueHelpersServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
@@ -16,10 +16,10 @@ class SkeletonServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('skeleton')
+            ->name('inertia-vue-helpers')
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration('create_skeleton_table')
-            ->hasCommand(SkeletonCommand::class);
+            ->hasMigration('create_inertia-vue-helpers_table')
+            ->hasCommand(InertiaVueHelpersCommand::class);
     }
 }

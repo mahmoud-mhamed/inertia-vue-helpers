@@ -1,17 +1,17 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "mahmoud-mhamed/inertia-vue-helpers",
+    "description": "This is my package inertia-vue-helpers",
     "keywords": [
-        ":vendor_name",
+        "mahmoud-mhamed",
         "laravel",
-        ":package_slug"
+        "inertia-vue-helpers"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/mahmoud-mhamed/inertia-vue-helpers",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "mahmoud-mhamed",
+            "email": "mahmoud1272022@gmail.com",
             "role": "Developer"
         }
     ],
@@ -35,13 +35,13 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
+            "Mahmoudmhamed\\InertiaVueHelpers\\": "src",
+            "Mahmoudmhamed\\InertiaVueHelpers\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "Mahmoudmhamed\\InertiaVueHelpers\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -61,10 +61,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "Mahmoudmhamed\\InertiaVueHelpers\\InertiaVueHelpersServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "InertiaVueHelpers": "Mahmoudmhamed\\InertiaVueHelpers\\Facades\\InertiaVueHelpers"
             }
         }
     },
