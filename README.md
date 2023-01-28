@@ -26,8 +26,11 @@ composer require mahmoud-mhamed/inertia-vue-helpers
 You can publish and run the migrations with:
 ```bash
 #must add\Mahmoudmhamed\InertiaVueHelpers\Providers\PackageServiceProvider::class, to config=>app->providers array
-
+#this command well create file App\Console\Commands\CloneLangToJs
 php artisan vendor:publish --tag="command-clone-lang-to-js"
+
+#this command well create file App\Console\Commands\CloneAbilityToJs.php && App\Classes\Abilities.php
+php artisan vendor:publish --tag="command-clone-ability-to-js"
 
 ```
 #### For Easy Use You Can Add In package.json in scripts object

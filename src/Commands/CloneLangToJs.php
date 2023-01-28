@@ -13,7 +13,7 @@ class CloneLangToJs extends Command
      *
      * @var string
      */
-    protected $signature = 'lang:run';
+    protected $signature = 'lang:clone';
 
     /**
      * The console command description.

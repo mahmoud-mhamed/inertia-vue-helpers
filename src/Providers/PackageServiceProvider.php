@@ -19,6 +19,12 @@ class PackageServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../Commands/CloneLangToJs.php' => app_path('Console/Commands/CloneLangToJs.php'),
         ], 'command-clone-lang-to-js');
+
+        //publish CloneAbilityToJs.php js command
+        $this->publishes([
+            __DIR__.'/../Classes/Abilities.php' => base_path('app/Classes/Abilities.php'),
+            __DIR__.'/../Commands/CloneAbilityToJs.php' => app_path('Console/Commands/CloneAbilityToJs.php'),
+        ], 'command-clone-ability-to-js');
     }
 
     /**
