@@ -24,18 +24,42 @@ composer require mahmoud-mhamed/inertia-vue-helpers
 ```
 
 You can publish and run the migrations with:
+
 ```bash
-#must add\Mahmoudmhamed\InertiaVueHelpers\Providers\PackageServiceProvider::class, to config=>app->providers array
-
-php artisan vendor:publish --tag="command-clone-lang-to-js"
-
+php artisan vendor:publish --tag="inertia-vue-helpers-migrations"
+php artisan migrate
 ```
-#### For Easy Use You Can Add In package.json in scripts object
+
+You can publish the config file with:
+
+```bash
+php artisan vendor:publish --tag="inertia-vue-helpers-config"
 ```
-"scripts": {
-        ...
-        "lang-run": "php artisan lang:run",
-    },
+
+This is the contents of the published config file:
+
+```php
+return [
+];
+```
+
+Optionally, you can publish the views using
+
+```bash
+php artisan vendor:publish --tag="inertia-vue-helpers-views"
+```
+
+## Usage
+
+```php
+$inertiaVueHelpers = new Mahmoudmhamed\InertiaVueHelpers();
+echo $inertiaVueHelpers->echoPhrase('Hello, Mahmoudmhamed!');
+```
+
+## Testing
+
+```bash
+composer test
 ```
 
 ## Changelog

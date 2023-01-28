@@ -15,10 +15,10 @@ class PackageServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
+        //publish clone lang to js command
         $this->publishes([
-            __DIR__.'/src/Commands/CloneLangToJs.php' => app_path('Console/Commands/CloneLangToJs.php'),
-        ]);
+            __DIR__.'/../Commands/CloneLangToJs.php' => app_path('Console/Commands/CloneLangToJs.php'),
+        ], 'command-clone-lang-to-js');
     }
 
     /**
