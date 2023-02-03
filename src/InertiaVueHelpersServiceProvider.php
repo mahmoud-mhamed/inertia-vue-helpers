@@ -4,7 +4,6 @@ namespace Mahmoudmhamed\InertiaVueHelpers;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Mahmoudmhamed\InertiaVueHelpers\Commands\InertiaVueHelpersCommand;
 
 class InertiaVueHelpersServiceProvider extends PackageServiceProvider
 {
@@ -19,7 +18,6 @@ class InertiaVueHelpersServiceProvider extends PackageServiceProvider
             ->name('inertia-vue-helpers')
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration('create_inertia-vue-helpers_table')
-            ->hasCommand(InertiaVueHelpersCommand::class);
+            ->hasMigration('create_inertia-vue-helpers_table');
     }
 }

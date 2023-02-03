@@ -25,6 +25,16 @@ class PackageServiceProvider extends ServiceProvider
             __DIR__.'/../Classes/Abilities.php' => base_path('app/Classes/Abilities.php'),
             __DIR__.'/../Commands/CloneAbilityToJs.php' => app_path('Console/Commands/CloneAbilityToJs.php'),
         ], 'command-clone-ability-to-js');
+
+        //publish AbilityDirective.js
+        $this->publishes([
+            __DIR__.'/../Directive/AbilityDirective.js' => base_path('resources/js/directive/AbilityDirective.js'),
+        ], 'make-ability-directive');
+
+        //publish Text.vue
+        $this->publishes([
+            __DIR__.'/../Components/Text.vue' => base_path('resources/js/Components/Text.vue'),
+        ], 'TextComponent');
     }
 
     /**

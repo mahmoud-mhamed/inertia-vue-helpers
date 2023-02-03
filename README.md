@@ -23,16 +23,36 @@ You can install the package via composer:
 composer require mahmoud-mhamed/inertia-vue-helpers
 ```
 
-You can publish and run the migrations with:
-```bash
-#must add\Mahmoudmhamed\InertiaVueHelpers\Providers\PackageServiceProvider::class, to config=>app->providers array
-#this command well create file App\Console\Commands\CloneLangToJs
-php artisan vendor:publish --tag="command-clone-lang-to-js"
-
-#this command well create file App\Console\Commands\CloneAbilityToJs.php && App\Classes\Abilities.php
-php artisan vendor:publish --tag="command-clone-ability-to-js"
-
+>before publish must add \Mahmoudmhamed\InertiaVueHelpers\Providers\PackageServiceProvider::class, to config->app->providers array
 ```
+\Mahmoudmhamed\InertiaVueHelpers\Providers\PackageServiceProvider::class,
+```
+You can publish files by:
+>publish app\Console\Commands\CloneLangToJs.php
+```bash
+php artisan vendor:publish --tag="command-clone-lang-to-js"
+```
+>publish app\Console\Commands\Abilities.php
+```bash
+php artisan vendor:publish --tag="command-clone-ability-to-js"
+```
+---
+**AbilityDirective.js**
+>publish app\resources\js\directive\AbilityDirective.js
+
+add to app.js
+
+import {ability_if,ability_else} from "@/directive/AbilityDirective";
+
+.directive('ability', ability_if)
+
+.directive('else-ability', ability_else)
+
+```bash
+php artisan vendor:publish --tag="make-ability-directive"
+```
+---
+
 #### For Easy Use You Can Add In package.json in scripts object
 ```
 "scripts": {
