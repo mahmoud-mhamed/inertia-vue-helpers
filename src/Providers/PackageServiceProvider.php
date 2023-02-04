@@ -35,6 +35,12 @@ class PackageServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../Components/Text.vue' => base_path('resources/js/Components/Text.vue'),
         ], 'TextComponent');
+
+        //publish Buttons
+        $this->publishes([
+            __DIR__.'/../Components/Buttons' => base_path('resources/js/Components/Buttons'),
+            __DIR__.'/../Components/LoadingDots.vue' => base_path('resources/js/Components/LoadingDots.vue'),
+        ], 'ButtonComponent');
     }
 
     /**
