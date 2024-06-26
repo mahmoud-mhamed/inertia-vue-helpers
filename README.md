@@ -23,22 +23,33 @@ You can install the package via composer:
 composer require mahmoud-mhamed/inertia-vue-helpers
 ```
 
->before publish must add \Mahmoudmhamed\InertiaVueHelpers\Providers\PackageServiceProvider::class, to config->app->providers array
-```
-\Mahmoudmhamed\InertiaVueHelpers\Providers\PackageServiceProvider::class,
-```
-You can publish files by:
->publish app\Console\Commands\CloneLangToJs.php
+## Before Use Any Command
+##### must add \Mahmoudmhamed\LaravelHelpers\Providers\PackageServiceProvider::class to config=>app->providers array
+to force publish any file add --force to command
+---
+
+Publish Command To Clone Enums From app => Enums To resources => js => enum.js:
 ```bash
-php artisan vendor:publish --tag="command-clone-lang-to-js"
+php artisan vendor:publish --tag="clone-enums-to-js-command"
 ```
->publish app\Console\Commands\Abilities.php
+---
+
+Publish Command To Clone Lang Folder from php To resources => js => lang:
+```bash
+php artisan vendor:publish --tag="clone-lang-to-js-command"
+```
+---
+
+Publish Command To Clone Abilities from app => classes => Abilities.php To resources => js => ability.js:
 ```bash
 php artisan vendor:publish --tag="command-clone-ability-to-js"
 ```
 ---
-**AbilityDirective.js**
->publish app\resources\js\directive\AbilityDirective.js
+
+Publish Vue Ability directive
+```bash
+php artisan vendor:publish --tag="ability-directive"
+```
 
 add to app.js
 
@@ -48,18 +59,55 @@ import {ability_if,ability_else} from "@/directive/AbilityDirective";
 
 .directive('else-ability', ability_else)
 
-```bash
-php artisan vendor:publish --tag="make-ability-directive"
-```
 ---
 
-#### For Easy Use You Can Add In package.json in scripts object
+### publish vue commponets  to path resources/js/Components
+| Tag             |                             publish file                              |  description |
+|-----------------|:---------------------------------------------------------------------:|-------------:|
+| ElTextComponent |                            Text/ElText.vue                            |              |
+| ButtonComponent | Buttons/ ElPrimaryButton.vue,ElSecondaryButton.vue,ElSubmitButton.vue |              |
+|                 |                          /ElLoadingDots.vue                           |              |
+
+
+
+### You Can Run Command From package.json by add to scripts
 ```
-"scripts": {
-        ...
+{
+    ....
+    "scripts": {
+        "lang": "php artisan lang:run && php artisan ability:run",
         "lang-run": "php artisan lang:run",
+        "ability-run": "php artisan ability:run",
+        "dev": "vite",
+        "build": "vite build"
     },
+    ...
+}
 ```
+
+
+### To allow auto generate file if use vite.config.js in plugins array add
+```
+    plugins: [
+    ....
+    {
+        name: "enum_clone",
+        enforce: "post",
+        handleHotUpdate({ server, file }) {
+            if (file.includes("/app/Enums")) {
+                exec(
+                    "php artisan enums:clone-to-js",
+                    (error, stdout) =>
+                        error === null &&
+                        console.log(`Enum Js File Generated Successfully !`)
+                );
+            }
+        },
+    },
+],
+
+```
+
 
 ## Changelog
 

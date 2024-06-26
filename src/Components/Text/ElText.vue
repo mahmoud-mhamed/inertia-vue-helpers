@@ -1,8 +1,7 @@
 <template>
-    <label v-if="$slots.default">
-        <slot/>
+    <label>
+        {{ value == null || value === '' || (value == '0' && zeroToNull) ? '---' : value }}
     </label>
-    <label v-else>{{ value == null || (value == '' && value != '0') ||(value == '' && zeroToNull) ? '----' : value }}</label>
 </template>
 
 <script setup>

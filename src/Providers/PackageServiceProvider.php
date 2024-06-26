@@ -15,31 +15,37 @@ class PackageServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //publish clone lang to js command
+        //publish copy enums to js command
         $this->publishes([
-            __DIR__.'/../Commands/CloneLangToJs.php' => app_path('Console/Commands/CloneLangToJs.php'),
-        ], 'command-clone-lang-to-js');
+            __DIR__.'/../Commands/CopyEnumsToJsCommxand.php' => app_path('Console/Commands/CopyEnumsToJsCommand.php'),
+        ], 'clone-enums-to-js-command');
+
+        //publish copy lang to js command
+        $this->publishes([
+            __DIR__.'/../Commands/CopyLangToJsCommand.php' => app_path('Console/Commands/CopyLangToJsCommand.php'),
+        ], 'clone-lang-to-js-command');
+
 
         //publish CloneAbilityToJs.php js command
         $this->publishes([
             __DIR__.'/../Classes/Abilities.php' => base_path('app/Classes/Abilities.php'),
             __DIR__.'/../Commands/CloneAbilityToJs.php' => app_path('Console/Commands/CloneAbilityToJs.php'),
-        ], 'command-clone-ability-to-js');
+        ], 'copy-ability-to-js-command');
 
         //publish AbilityDirective.js
         $this->publishes([
             __DIR__.'/../Directive/AbilityDirective.js' => base_path('resources/js/directive/AbilityDirective.js'),
-        ], 'make-ability-directive');
+        ], 'ability-directive');
 
         //publish Text.vue
         $this->publishes([
-            __DIR__.'/../Components/Text.vue' => base_path('resources/js/Components/Text.vue'),
-        ], 'TextComponent');
+            __DIR__ . '/../Components/Text/ElText.vue' => base_path('resources/js/Components/Text/ElText.vue'),
+        ], 'ElTextComponent');
 
         //publish Buttons
         $this->publishes([
             __DIR__.'/../Components/Buttons' => base_path('resources/js/Components/Buttons'),
-            __DIR__.'/../Components/LoadingDots.vue' => base_path('resources/js/Components/LoadingDots.vue'),
+            __DIR__.'/../Components/ElLoadingDots.vue' => base_path('resources/js/Components/ElLoadingDots.vue'),
         ], 'ButtonComponent');
     }
 
