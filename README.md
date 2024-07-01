@@ -42,7 +42,7 @@ php artisan vendor:publish --tag="clone-lang-to-js-command"
 
 Publish Command To Clone Abilities from app => classes => Abilities.php To resources => js => ability.js:
 ```bash
-php artisan vendor:publish --tag="command-clone-ability-to-js"
+php artisan vendor:publish --tag="copy-ability-to-js-command"
 ```
 ---
 
@@ -75,9 +75,10 @@ import {ability_if,ability_else} from "@/directive/AbilityDirective";
 {
     ....
     "scripts": {
-        "lang": "php artisan lang:run && php artisan ability:run",
-        "lang-run": "php artisan lang:run",
-        "ability-run": "php artisan ability:run",
+        "run-all": "php artisan lang:copy && php artisan ability:clone-to-js && php artisan enums:clone-to-js",
+        "copy-lang": "php artisan lang:copy",
+        "copy-ability": "php artisan ability:clone-to-js",
+        "copy-enum": "php artisan enums:clone-to-js",
         "dev": "vite",
         "build": "vite build"
     },
@@ -100,6 +101,34 @@ import {ability_if,ability_else} from "@/directive/AbilityDirective";
                     (error, stdout) =>
                         error === null &&
                         console.log(`Enum Js File Generated Successfully !`)
+                );
+            }
+        },
+    },
+   {
+        name: "lang",
+        enforce: "post",
+        handleHotUpdate({ server, file }) {
+            if (file.includes("/lang/")) {
+                exec(
+                    "php artisan lang:copy",
+                    (error, stdout) =>
+                        error === null &&
+                        console.log(`Lang Generated Successfully !`)
+                );
+            }
+        },
+    },
+    {
+        name: "ability",
+        enforce: "post",
+        handleHotUpdate({ server, file }) {
+            if (file.includes("/Abilities.php")) {
+                exec(
+                    "php artisan ability:clone-to-js",
+                    (error, stdout) =>
+                        error === null &&
+                        console.log(`Ability Clone Successfully !`)
                 );
             }
         },

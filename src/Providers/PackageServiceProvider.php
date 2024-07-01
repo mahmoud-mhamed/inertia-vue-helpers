@@ -3,8 +3,6 @@
 namespace Mahmoudmhamed\InertiaVueHelpers\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Mahmoudmhamed\LaravelHelpers\Commands\MakeBaseModelCommand;
-use Mahmoudmhamed\LaravelHelpers\Commands\MakeEnumCommand;
 
 class PackageServiceProvider extends ServiceProvider
 {
@@ -17,7 +15,7 @@ class PackageServiceProvider extends ServiceProvider
     {
         //publish copy enums to js command
         $this->publishes([
-            __DIR__.'/../Commands/CopyEnumsToJsCommxand.php' => app_path('Console/Commands/CopyEnumsToJsCommand.php'),
+            __DIR__.'/../Commands/CopyEnumsToJsCommand.php' => app_path('Console/Commands/CopyEnumsToJsCommand.php'),
         ], 'clone-enums-to-js-command');
 
         //publish copy lang to js command
