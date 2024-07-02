@@ -17,14 +17,14 @@
             </header>
             <hr>
             <div class="h-fit p-0 lg:p-3">
-                <chart-component :height="height" :chart="data[name]"/>
+                <el-chart-component :height="height" :chart="data[name]"/>
             </div>
         </section>
         <Dialog v-if="is_full_screen" v-model:visible="is_full_screen"
                 :rtl="true" maximizable2 :style="{width: '950px'}"
                 :header=" title ?? $t('base.' + name)" :modal="true">
             <div class="lg:p-3">
-                <chart-component v-if="daily_full_screen" :chart="data[name]"/>
+                <el-chart-component v-if="daily_full_screen" :chart="data[name]"/>
             </div>
         </Dialog>
     </div>
@@ -33,7 +33,7 @@
 
 <script setup>
 import {ref, watch} from "vue";
-import ChartComponent from "./ElChartComponent.vue";
+import ElChartComponent from "./ElChartComponent.vue";
 import Dialog from "primevue/dialog";
 
 const props = defineProps({

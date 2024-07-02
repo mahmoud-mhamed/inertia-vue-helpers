@@ -4,8 +4,8 @@
 </template>
 
 <script setup>
-import ElApexChartComponent from "@/Components/Chart/ElApexChartComponent.vue";
-import ElChartJsComponent from "@/Components/Chart/ElChartJsComponent.vue";
+import ElApexChartComponent from "@/Components/Charts/ElApexChartComponent.vue";
+import ElChartJsComponent from "@/Components/Charts/ElChartJsComponent.vue";
 
 const props = defineProps({
     chart: Object,
