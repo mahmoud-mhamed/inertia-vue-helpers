@@ -5,15 +5,7 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/mahmoud-mhamed/inertia-vue-helpers/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/mahmoud-mhamed/inertia-vue-helpers/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/mahmoud-mhamed/inertia-vue-helpers.svg?style=flat-square)](https://packagist.org/packages/mahmoud-mhamed/inertia-vue-helpers)
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
-
-## Support us
-
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/inertia-vue-helpers.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/inertia-vue-helpers)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
+[//]: # (This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.)
 
 ## Installation
 
@@ -58,16 +50,6 @@ import {ability_if,ability_else} from "@/directive/AbilityDirective";
 .directive('ability', ability_if)
 
 .directive('else-ability', ability_else)
-
----
-
-### publish vue commponets  to path resources/js/Components
-| Tag             |                             publish file                              |  description |
-|-----------------|:---------------------------------------------------------------------:|-------------:|
-| ElTextComponent |                            Text/ElText.vue                            |              |
-| ButtonComponent | Buttons/ ElPrimaryButton.vue,ElSecondaryButton.vue,ElSubmitButton.vue |              |
-|                 |                          /ElLoadingDots.vue                           |              |
-
 
 
 ### You Can Run Command From package.json by add to scripts
@@ -137,6 +119,20 @@ import {ability_if,ability_else} from "@/directive/AbilityDirective";
 
 ```
 
+---
+
+### publish vue commponets  to path resources/js/Components
+```bash
+php artisan vendor:publish --tag="ElTextComponent"
+php artisan vendor:publish --tag="ElButtonComponent"
+```
+| Tag               |                             publish file                              |  description |
+|-------------------|:---------------------------------------------------------------------:|-------------:|
+| ElTextComponent   |                            Text/ElText.vue                            |              |
+| ElButtonComponent | Buttons/ ElPrimaryButton.vue,ElSecondaryButton.vue,ElSubmitButton.vue |              |
+|                   |                          /ElLoadingDots.vue                           |              |
+
+### publish make chart js or  apex chart
 
 ## Changelog
 
