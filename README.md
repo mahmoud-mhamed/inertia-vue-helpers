@@ -16,7 +16,7 @@ composer require mahmoud-mhamed/inertia-vue-helpers
 ```
 
 ## Before Use Any Command
-##### must add \Mahmoudmhamed\LaravelHelpers\Providers\PackageServiceProvider::class to config=>app->providers array
+##### must add \Mahmoudmhamed\InertiaVueHelpers\Providers\PackageServiceProvider::class to config=>app->providers array
 to force publish any file add --force to command
 ---
 
