@@ -1,10 +1,12 @@
-import {Inertia} from "@inertiajs/inertia";
+import {usePage} from '@inertiajs/vue3'
 
 export const ability_if = {
     beforeMount: (el, binding, vnode) => {
         if (!checkAbility(binding.value)) {
             el.classList.add('hidden');
-            (vnode.children)?.map((item) => item.el.remove());
+            setTimeout(function (){
+                el.remove();
+            },1);
         }
     },
 };
@@ -18,6 +20,8 @@ export const ability_else = {
 };
 
 function checkAbility(abilities) {
+    if (!usePage().props.auth?.abilities)
+        return false;
     if (Array.isArray(abilities)) {
         let result = true;
         for (const abilityKey in abilities) {
@@ -25,16 +29,16 @@ function checkAbility(abilities) {
             if (Array.isArray(item)) {
                 let temp_result = false;
                 for (const itemKey in item) {
-                    temp_result = temp_result || Inertia.page.props.permissions.includes(item[itemKey]);
+                    temp_result = temp_result || usePage().props.auth.abilities.includes(item[itemKey]);
                 }
                 result = result && temp_result;
             } else {
-                result = result && Inertia.page.props.permissions.includes(item);
+                result = result && usePage().props.auth.abilities.includes(item);
             }
         }
         return result;
     } else {
-        return Inertia.page.props.permissions.includes(abilities);
+        return usePage().props.auth.abilities.includes(abilities);
     }
 }
 
