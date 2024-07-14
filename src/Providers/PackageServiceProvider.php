@@ -27,6 +27,7 @@ class PackageServiceProvider extends ServiceProvider
         //publish CloneAbilityToJs.php js command
         $this->publishes([
             __DIR__.'/../Classes/Abilities.php' => base_path('app/Classes/Abilities.php'),
+            __DIR__.'/../Enums/ModuleNameEnum.php' => base_path('app/Enums/ModuleNameEnum.php'),
             __DIR__.'/../Commands/CloneAbilityToJs.php' => app_path('Console/Commands/CloneAbilityToJs.php'),
         ], 'copy-ability-to-js-command');
 
