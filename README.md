@@ -57,9 +57,9 @@ import {ability_if,ability_else} from "@/directive/AbilityDirective";
 {
     ....
     "scripts": {
-        "run-all": "php artisan lang:copy && php artisan ability:clone-to-js && php artisan enums:clone-to-js",
+        "run-all": "php artisan lang:copy && php artisan ability:clone && php artisan enums:clone-to-js",
         "copy-lang": "php artisan lang:copy",
-        "copy-ability": "php artisan ability:clone-to-js",
+        "copy-ability": "php artisan ability:clone",
         "copy-enum": "php artisan enums:clone-to-js",
         "dev": "vite",
         "build": "vite build"
@@ -107,7 +107,7 @@ import {ability_if,ability_else} from "@/directive/AbilityDirective";
         handleHotUpdate({ server, file }) {
             if (file.includes("/Abilities.php")) {
                 exec(
-                    "php artisan ability:clone-to-js",
+                    "php artisan ability:clone",
                     (error, stdout) =>
                         error === null &&
                         console.log(`Ability Clone Successfully !`)
