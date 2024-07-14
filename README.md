@@ -133,7 +133,9 @@ php artisan vendor:publish --tag="ElButtonComponent"
 |                   |                          /ElLoadingDots.vue                           |              |
 
 ### publish make chart js or  apex chart
-
+```bash
+php artisan vendor:publish --tag="Chart"
+```
 ## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
