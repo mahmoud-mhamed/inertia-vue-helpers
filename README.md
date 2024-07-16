@@ -93,7 +93,7 @@ import {ability_if,ability_else} from "@/directive/AbilityDirective";
     handleHotUpdate({ server, file }) {
         if (file.includes("/lang/")) {
             exec(
-                `php artisan lang:copy --lang=${file.includes('ar')?'ar':'en'} --file=${file.split('/').pop()}`,
+                `php artisan lang:copy --lang=${file.includes('/ar/')?'ar':'en'} --file=${file.split('/').pop()}`,
                 (error, stdout) =>
                     error === null &&
                     console.log(`Lang Generated Successfully !`)
