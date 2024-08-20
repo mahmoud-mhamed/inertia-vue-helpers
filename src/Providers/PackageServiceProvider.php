@@ -52,6 +52,7 @@ class PackageServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../Components/Charts' => base_path('resources/js/Components/Charts'),
             __DIR__.'/../Chart' => base_path('app/Chart'),
+            __DIR__.'/../../config/charts.php' => base_path('app/config'),
         ], 'Chart');
     }
 

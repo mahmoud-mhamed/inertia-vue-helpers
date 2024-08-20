@@ -1,5 +1,5 @@
 <template>
-    <div v-if="data[name]">
+    <div v-if="data[name]" class="h-full" :key="name+'_'+Math.round()">
         <section class="flex relative h-full flex-col min-w-0 leading-5 break-words bg-clip-border
          bg-white dark:bg-dark-300 border-0 border-gray-100 border-solid box-border
          text-slate-900 dark:text-white p-2 rounded-md shadow ">
