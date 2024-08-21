@@ -17,6 +17,22 @@ composer require mahmoud-mhamed/inertia-vue-helpers
 
 ## Before Use Any Command
 ##### must add \Mahmoudmhamed\InertiaVueHelpers\Providers\PackageServiceProvider::class to config=>app->providers array
+## Before Use Any Command
+### for laravel < 11
+##### must add  to config -> app -> providers array
+```bash
+  \Mahmoudmhamed\InertiaVueHelpers\Providers\PackageServiceProvider::class
+```
+### for laravel >= 11
+##### must add to config -> app.php
+```bash
+  'providers' => ServiceProvider::defaultProviders()->merge([
+        \Mahmoudmhamed\InertiaVueHelpers\Providers\PackageServiceProvider::class,
+    ])->toArray()
+```
+
+
+
 to force publish any file add --force to command
 ---
 
