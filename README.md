@@ -152,7 +152,10 @@ php artisan vendor:publish --tag="ElButtonComponent"
 ```bash
 npm i chart.js
 npm i chartjs-plugin-datalabels
-npm i apexcharts
+
+npm install --save apexcharts
+npm install --save vue3-apexcharts
+
 php artisan vendor:publish --tag="Chart"
 ```
 ## Changelog
