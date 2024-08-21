@@ -150,6 +150,9 @@ php artisan vendor:publish --tag="ElButtonComponent"
 
 ### publish make chart js or  apex chart
 ```bash
+npm i chart.js
+npm i chartjs-plugin-datalabels
+npm i apexcharts
 php artisan vendor:publish --tag="Chart"
 ```
 ## Changelog
