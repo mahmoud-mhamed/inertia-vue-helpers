@@ -21,7 +21,7 @@
             </div>
         </section>
         <Dialog v-if="is_full_screen" v-model:visible="is_full_screen"
-                :rtl="true" maximizable2 :style="{width: '950px'}"
+                :rtl="true" maximizable2 :style="{width: data?.[name]?.['type']==='doughnut'?'650px':'950px'}"
                 :header=" title ?? $t('base.' + name)" :modal="true">
             <div class="lg:p-3">
                 <el-chart-component v-if="daily_full_screen" :chart="data[name]"/>
