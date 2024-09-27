@@ -46,7 +46,9 @@ class PackageServiceProvider extends ServiceProvider
             __DIR__.'/../Components/Buttons' => base_path('resources/js/Components/Buttons'),
             __DIR__.'/../Components/ElLoadingDots.vue' => base_path('resources/js/Components/ElLoadingDots.vue'),
         ], 'ElButtonComponent');
-
+        $this->publishes([
+            __DIR__.'/../Components/Form' => base_path('resources/js/Components/Form'),
+        ], 'ElFormComponents');
 
         //publish chart components
         $this->publishes([

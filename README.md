@@ -141,6 +141,7 @@ import {ability_if,ability_else} from "@/directive/AbilityDirective";
 ```bash
 php artisan vendor:publish --tag="ElTextComponent"
 php artisan vendor:publish --tag="ElButtonComponent"
+php artisan vendor:publish --tag="ElFormComponents"
 ```
 | Tag               |                             publish file                              |  description |
 |-------------------|:---------------------------------------------------------------------:|-------------:|
